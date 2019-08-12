@@ -1,0 +1,4 @@
+com\microservices2\exercise1\account\ApiAccountApplication.class
+com\microservices2\exercise1\account\model\Account.class
+com\microservices2\exercise1\account\repository\AccountRepository.class
+com\microservices2\exercise1\account\controller\AccountController.class

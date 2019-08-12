@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: api-account
+  datasource:
+    url: jdbc:h2:file:~/accountbanking;DB_CLOSE_ON_EXIT=FALSE;
+    jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          show_sql: true
+    h2:
+      console:
+        enable: true
+        settings:
+          web-allow-others: true
+
+server:
+  port: 6060
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+info:
+  app:
+    name: api-account
+    description: Account service app
+    version: 0.0.1-SNAPSHOT
+    email: email@email.com
+    phone: 320-0000000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    metrics:
+      enabled: true
