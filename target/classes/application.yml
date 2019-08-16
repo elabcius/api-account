@@ -1,6 +1,19 @@
 spring:
   application:
     name: api-account
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+      bindings:
+        notification-in:
+          destination: notifications
+          contentType: application/json
+        notification-out:
+          destination: notifications
+          contentType: application/json
   datasource:
     url: jdbc:h2:file:~/accountbanking;DB_CLOSE_ON_EXIT=FALSE;
     jpa:

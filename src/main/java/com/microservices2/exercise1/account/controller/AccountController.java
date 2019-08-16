@@ -1,7 +1,9 @@
 package com.microservices2.exercise1.account.controller;
 
 import com.microservices2.exercise1.account.model.Account;
+import com.microservices2.exercise1.account.model.Notification;
 import com.microservices2.exercise1.account.repository.AccountRepository;
+import com.microservices2.exercise1.account.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,43 +16,49 @@ public class AccountController {
     @Autowired
     private AccountRepository accountRepository;
 
+    @Autowired
+    private NotificationService notificationService;
+
     @PostMapping
     public Account save(@RequestBody Account account) {
+        Notification notification = new Notification("Account is created", "pabliny193@gmail.com",
+                "3201231212");
+        notificationService.sendNotification(notification);
         return accountRepository.save(account);
     }
 
     @GetMapping
-    public Iterable<Account> all(){
+    public Iterable<Account> all() {
         return accountRepository.findAll();
     }
 
     @GetMapping(value = "/{accountId}")
-    public Account findByAccountId(@PathVariable final Integer accountId){
+    public Account findByAccountId(@PathVariable final Integer accountId) {
         return accountRepository.findAccountByAccountId(accountId);
     }
 
     @PutMapping
-    public Account update(@RequestBody Account account){
+    public Account update(@RequestBody Account account) {
         return accountRepository.save(account);
     }
 
     @DeleteMapping
-    public void delete(@RequestBody Account account){
+    public void delete(@RequestBody Account account) {
         accountRepository.delete(account);
     }
 
     @GetMapping(value = "/account-type/{type}")
-    public List<Account> findByAccountType(@PathVariable final String type){
+    public List<Account> findByAccountType(@PathVariable final String type) {
         return accountRepository.findAllByAccountType(type);
     }
 
     @GetMapping(value = "/bank/{bank}")
-    public List<Account> findByBank(@PathVariable final String bank){
+    public List<Account> findByBank(@PathVariable final String bank) {
         return accountRepository.findByBank(bank);
     }
 
     @GetMapping(value = "/customer/{customer}")
-    public List<Account> findByCustomer(@PathVariable("customer") Integer customerId){
+    public List<Account> findByCustomer(@PathVariable("customer") Integer customerId) {
         return accountRepository.findAllByCustomerId(customerId);
     }
 }

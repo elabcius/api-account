@@ -1,4 +1,8 @@
+I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\config\StreamsConfig.java
 I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\controller\AccountController.java
+I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\service\NotificationService.java
 I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\ApiAccountApplication.java
+I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\stream\NotificationStreams.java
 I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\repository\AccountRepository.java
 I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\model\Account.java
+I:\Diplomado UdeA\Part2\api-account\src\main\java\com\microservices2\exercise1\account\model\Notification.java

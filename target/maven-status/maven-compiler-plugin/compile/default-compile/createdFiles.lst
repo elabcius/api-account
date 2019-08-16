@@ -1,4 +1,8 @@
-com\microservices2\exercise1\account\ApiAccountApplication.class
 com\microservices2\exercise1\account\model\Account.class
+com\microservices2\exercise1\account\stream\NotificationStreams.class
+com\microservices2\exercise1\account\ApiAccountApplication.class
+com\microservices2\exercise1\account\config\StreamsConfig.class
+com\microservices2\exercise1\account\model\Notification.class
+com\microservices2\exercise1\account\service\NotificationService.class
 com\microservices2\exercise1\account\repository\AccountRepository.class
 com\microservices2\exercise1\account\controller\AccountController.class
